@@ -25,5 +25,6 @@ Route::prefix('admin')->middleware('auth','admin')->group(function(){
     Route::prefix('category')->group(function(){
         Route::get('/index', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin.category.index');
         Route::get('/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin.category.create');
+        Route::post('/store', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('admin.category.store');
     });
 });
