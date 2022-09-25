@@ -30,4 +30,8 @@ Route::prefix('admin')->middleware('auth','admin')->group(function(){
         Route::post('/{category}/update', [App\Http\Controllers\Admin\CategoryController::class, 'update'])->name('admin.category.update');
         // Route::get('/{category}/delete', [App\Http\Controllers\Admin\CategoryController::class, 'delete'])->name('admin.category.delete');
     });
+    Route::prefix('brand')->group(function(){
+        Route::get('/index', [App\Http\Controllers\Admin\BrandController::class, 'index'])->name('admin.brand.index');
+        
+    });
 });
